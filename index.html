@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hacker Feras Terminal</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ff00;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 20px;
+      font-size: 18px;
+    }
+    #terminal {
+      white-space: pre-wrap;
+    }
+    .blinking-cursor {
+      display: inline-block;
+      width: 10px;
+      background-color: #00ff00;
+      animation: blink 1s step-start infinite;
+    }
+    @keyframes blink {
+      50% { background-color: transparent; }
+    }
+  </style>
+</head>
+<body>
+  <div id="terminal">
+    > Welcome back, Hacker Firas...<br>
+    > Initializing system breach...<br><br>
+  </div>
+  <div class="blinking-cursor"></div>
+
+  <script>
+    const terminal = document.getElementById('terminal');
+    const lines = [
+      "Connecting to server: 192.168.1.55...",
+      "Bypassing firewall...",
+      "Access granted.",
+      "Downloading confidential files...",
+      "Uploading payload...",
+      "System override initiated...",
+      "Mission accomplished. Logging out..."
+    ];
+
+    let index = 0;
+    function typeLine() {
+      if (index < lines.length) {
+        terminal.innerHTML += "> " + lines[index] + "<br>";
+        index++;
+        setTimeout(typeLine, 1000);
+      }
+    }
+
+    setTimeout(typeLine, 2000);
+  </script>
+</body>
+</html>
